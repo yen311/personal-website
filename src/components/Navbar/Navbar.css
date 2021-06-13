@@ -47,3 +47,40 @@
 .menu-icon {
   display: none;
 }
+
+@media screen and (max-width: 950px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    top: 60px;
+    right: -100%;
+    opacity: 1;
+    transition: all 0.5s ease-out;
+  }
+  .menu-icon {
+    display: block;
+    position: fixed;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  .nav-menu.open {
+    background: white;
+    right: -50%;
+    opacity: 0.75;
+    transition: all 0.5s ease;
+    z-index: 5;
+  }
+  .nav-links {
+    border-bottom: solid 1px grey;
+    padding-bottom: 3px;
+  }
+  .logo {
+    border-bottom: none;
+    padding-bottom: none;
+  }
+}
