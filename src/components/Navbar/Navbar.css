@@ -1,0 +1,49 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 24px;
+  width: auto;
+  background-color: white;
+}
+
+.navbar-container {
+  display: flex;
+}
+
+.nav-menu {
+  display: flex;
+  justify-content: flex-start;
+}
+.nav-item {
+  border-right: dotted 1px rgba(111, 111, 111, 0.2);
+  padding: 20px 20px;
+  margin: auto 0px;
+  list-style-type: none;
+}
+.nav-links {
+  color: grey;
+  text-decoration: none;
+  font-family: "Mate SC", serif;
+}
+.logo {
+  font-weight: 900;
+  color: black;
+  text-decoration: none;
+  font-size: 36px;
+  margin: auto 0px;
+  text-align: center;
+}
+
+.nav-links:hover {
+  color: rgb(115, 115, 211);
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
