@@ -31,7 +31,7 @@
   font-weight: 900;
   color: black;
   text-decoration: none;
-  font-size: 36px;
+  font-size: 20px;
   margin: auto 0px;
   text-align: center;
 }
@@ -53,20 +53,19 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 85vh;
     position: absolute;
     top: 60px;
     right: -100%;
     opacity: 1;
     transition: all 0.5s ease-out;
-    margin-bottom: 20px;
   }
   .menu-icon {
     display: block;
     position: fixed;
     right: 0;
     transform: translate(-100%, 60%);
-    font-size: 2rem;
+    font-size: 1.5rem;
     cursor: pointer;
   }
   .nav-menu.open {
@@ -80,6 +79,7 @@
     border-bottom: solid 1px grey;
     padding-bottom: 3px;
   }
+
   .logo {
     border-bottom: none;
     padding-bottom: none;
