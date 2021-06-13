@@ -3,7 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  font-size: 24px;
+  font-size: 16px;
   width: auto;
   background-color: white;
 }
@@ -59,6 +59,7 @@
     right: -100%;
     opacity: 1;
     transition: all 0.5s ease-out;
+    margin-bottom: 20px;
   }
   .menu-icon {
     display: block;
