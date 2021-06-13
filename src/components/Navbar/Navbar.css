@@ -49,13 +49,16 @@
 }
 
 @media screen and (max-width: 950px) {
+  .navbar {
+    z-index: 2;
+  }
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 85vh;
+    height: 80vh;
     position: absolute;
-    top: 60px;
+    top: 30px;
     right: -100%;
     opacity: 1;
     transition: all 0.5s ease-out;
@@ -73,7 +76,7 @@
     right: -50%;
     opacity: 0.75;
     transition: all 0.5s ease;
-    z-index: 5;
+    z-index: 0;
   }
   .nav-links {
     border-bottom: solid 1px grey;
