@@ -24,6 +24,7 @@ function Navbar() {
             <NavItem close={closeHamburger}>Resume</NavItem>
             <NavItem close={closeHamburger}>Portfolio</NavItem>
             <NavItem close={closeHamburger}>Contact</NavItem>
+            <NavItem close={closeHamburger}>Test</NavItem>
           </ul>
           <div className="menu-icon" onClick={navOpenHandler}>
             <i className={navOpen ? "fas fa-times" : "fas fa-bars"} />
