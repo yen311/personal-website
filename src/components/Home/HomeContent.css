@@ -1,0 +1,30 @@
+.welcome {
+  margin: 12% auto;
+  width: 85%;
+  padding: 5%;
+}
+.home-top {
+  border-bottom: dotted 1px rgb(148, 148, 148);
+}
+.home-welcome {
+  letter-spacing: 3px;
+}
+.home-p {
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-weight: 200;
+}
+.home-bottom {
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+.link {
+  text-decoration: none;
+  color: gray;
+}
+.link:hover {
+  color: olive;
+}

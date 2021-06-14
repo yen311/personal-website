@@ -1,3 +1,7 @@
+.footer {
+  color: rgb(153, 153, 153);
+  margin: 25px 60px;
+}
 .icon {
   display: inline;
 }
@@ -10,19 +14,13 @@
 .iconitem:hover {
   color: olive;
 }
-
-.footer {
-  color: rgb(153, 153, 153);
-  margin: 10px;
-  position: relative;
-  left: 25px;
-  top: 30px;
-}
-
 .copyright {
   margin-top: 20px;
   font-size: 8px;
   opacity: 0.6;
+}
+.fa-copyright {
+  font-size: 6px;
 }
 .copyright-email {
   color: rgb(153, 153, 153);
@@ -31,8 +29,4 @@
 }
 .copyright-email:hover {
   color: olive;
-}
-
-.fa-copyright {
-  font-size: 6px;
 }

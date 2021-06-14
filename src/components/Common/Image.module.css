@@ -1,13 +1,11 @@
 .image {
-  width: 160px;
-  height: 160px;
+  width: 150px;
+  height: 180px;
   border-radius: 50%;
 }
 .all {
-  margin: 5vh;
   padding: 2em;
   vertical-align: middle;
-
   border-top: dotted 0.5px rgb(208, 208, 208);
   border-bottom: dotted 0.5px rgb(208, 208, 208);
   display: flex;

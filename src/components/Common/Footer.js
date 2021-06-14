@@ -23,7 +23,7 @@ function footer() {
       </div>
       <div>
         <p className="copyright">
-          <i class="far fa-copyright"></i>
+          <i className="far fa-copyright"></i>
           Yen_Kuo
           <a
             className="copyright-email"

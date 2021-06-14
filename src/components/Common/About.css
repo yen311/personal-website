@@ -1,0 +1,30 @@
+.about-all {
+  margin: 80px 60px;
+  padding-bottom: 60px;
+  border-bottom: dotted 0.5px rgb(208, 208, 208);
+}
+.about-title {
+  padding-bottom: 50px;
+  letter-spacing: 3px;
+  font-size: medium;
+}
+
+.about-p {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1cm;
+  font-weight: bold;
+  padding-bottom: 40px;
+}
+
+.about-link {
+  font-size: smaller;
+  color: gray;
+  padding: 10px;
+  border: 1px solid;
+  text-decoration: none;
+}
+
+.about-link:hover {
+  color: olive;
+  border-color: olive;
+}
