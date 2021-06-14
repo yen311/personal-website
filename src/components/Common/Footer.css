@@ -1,3 +1,38 @@
-a {
-  font-size: 20px;
+.icon {
+  display: inline;
+}
+
+.iconitem {
+  margin-right: 10px;
+  color: rgb(153, 153, 153);
+  opacity: 0.6;
+}
+.iconitem:hover {
+  color: olive;
+}
+
+.footer {
+  color: rgb(153, 153, 153);
+  margin: 10px;
+  position: relative;
+  left: 25px;
+  top: 30px;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 8px;
+  opacity: 0.6;
+}
+.copyright-email {
+  color: rgb(153, 153, 153);
+  text-decoration: underline;
+  margin-left: 5px;
+}
+.copyright-email:hover {
+  color: olive;
+}
+
+.fa-copyright {
+  font-size: 6px;
 }
