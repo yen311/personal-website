@@ -16,20 +16,20 @@ function HomeContent() {
       <div className="home-bottom">
         Welcome to my website. <br />
         Feel free to look around and get know more{" "}
-        <Link class="link" to="/about me">
+        <Link className="link" to="/about me">
           about me
         </Link>{" "}
         .<br />
         Observe if you want to know someone. Check out my{" "}
-        <Link class="link" to="/resume">
+        <Link className="link" to="/resume">
           resume
         </Link>{" "}
         ,{" "}
-        <Link class="link" to="/protfolio">
+        <Link className="link" to="/protfolio">
           protfolio
         </Link>{" "}
         , or{" "}
-        <Link class="link" to="/contact">
+        <Link className="link" to="/contact">
           contact
         </Link>{" "}
         me.

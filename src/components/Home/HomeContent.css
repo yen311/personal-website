@@ -28,3 +28,9 @@
 .link:hover {
   color: olive;
 }
+
+@media screen and (max-width: 700px) {
+  .welcome {
+    margin-top: 30%;
+  }
+}
