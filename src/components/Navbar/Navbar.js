@@ -19,7 +19,6 @@ function Navbar() {
             Yen Kuo
           </NavItem>
           <ul className={navOpen ? "nav-menu open" : "nav-menu"}>
-            <NavItem close={closeHamburger}>Home</NavItem>
             <NavItem close={closeHamburger}>About Me</NavItem>
             <NavItem close={closeHamburger}>Resume</NavItem>
             <NavItem close={closeHamburger}>Portfolio</NavItem>

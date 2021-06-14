@@ -7,7 +7,11 @@ function NavItem(props) {
     <li className="nav-item">
       <Link
         className={`nav-links ${props.className}`}
-        to={`/${props.children.toLowerCase()}`}
+        to={
+          props.children === "Yen Kuo"
+            ? "personal-website"
+            : `/${props.children.toLowerCase()}`
+        }
         onClick={props.close}
       >
         {props.children}

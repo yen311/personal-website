@@ -1,0 +1,35 @@
+.image {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+}
+.all {
+  margin: 5vh;
+  padding: 2em;
+  vertical-align: middle;
+
+  border-top: dotted 0.5px rgb(208, 208, 208);
+  border-bottom: dotted 0.5px rgb(208, 208, 208);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.email {
+  text-decoration: none;
+  color: black;
+  font-size: 10px;
+}
+.email:hover {
+  color: olive;
+}
+
+.name {
+  font-size: 40px;
+}
+.email,
+.image,
+.name {
+  margin: 10px;
+  padding: 10px;
+}
