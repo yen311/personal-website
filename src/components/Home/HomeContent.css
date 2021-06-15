@@ -1,24 +1,29 @@
-.welcome {
+.card-center {
   margin: 12% auto;
   width: 85%;
   padding: 5%;
 }
-.home-top {
+.card-top {
   border-bottom: dotted 1px rgb(148, 148, 148);
 }
-.home-welcome {
+.card-title {
   letter-spacing: 3px;
 }
-.home-p {
+.card-top-p {
   font-family: "Source Sans Pro", sans-serif;
   margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 200;
 }
-.home-bottom {
-  font-family: "Source Sans Pro", sans-serif;
+
+.card-bottom {
   margin-top: 50px;
   margin-bottom: 20px;
+}
+
+.card-bottom-p {
+  font-family: "Source Sans Pro", sans-serif;
+  line-height: 1.5;
 }
 
 .link {
@@ -30,7 +35,7 @@
 }
 
 @media screen and (max-width: 700px) {
-  .welcome {
+  .card-center {
     margin-top: 30%;
   }
 }
