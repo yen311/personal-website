@@ -4,6 +4,7 @@
 }
 
 .listItem {
+  line-height: 2;
   margin-left: 20px;
   font-family: "Source Sans Pro", sans-serif;
 }

@@ -1,11 +1,29 @@
-import React from "react";
-import WorldMap from "./SVG_WorldMap";
+import React, { useState, useEffect } from "react";
 import DotItem from "../Common/dotItem";
 import "./AboutContent.css";
 import Card from "../UI/Card";
 import { Link } from "react-router-dom";
+import Country from "./Country.png";
+import ImageZoom from "react-medium-image-zoom";
 
 function AboutContent() {
+  const Age = () => {
+    const [age, setAge] = useState();
+
+    const currentAge = () => {
+      const secOfYear = 60 * 60 * 24 * 365;
+      const birthday = new Date("March 11, 1997 10:29:00");
+      setAge(((Date.now() - birthday) / 1000 / secOfYear).toFixed(8));
+    };
+    useEffect(() => {
+      const time = setInterval(() => currentAge(), 1);
+      return () => {
+        clearInterval(time);
+      };
+    }, []);
+    return age;
+  };
+
   return (
     <Card className="card-center">
       <div className="card-top">
@@ -31,19 +49,39 @@ function AboutContent() {
           bring lot of happiness both for me and the users.
         </p>
         <h3 className="aboutMe-title">ENTERAINMENT</h3>
-        <p className="card-bottom-p">
-          <ul>
-            <DotItem>Fishing</DotItem>
-            <DotItem>Golf</DotItem>
-            <DotItem>Gaming</DotItem>
-            <DotItem>Traveling</DotItem>
-            <DotItem>Baseball</DotItem>
-            <DotItem>Hiking</DotItem>
-            <DotItem>Baking</DotItem>
-          </ul>
-        </p>
+
+        <ul>
+          <DotItem>Fishing</DotItem>
+          <DotItem>Golf</DotItem>
+          <DotItem>Gaming</DotItem>
+          <DotItem>Traveling</DotItem>
+          <DotItem>Baseball</DotItem>
+          <DotItem>Hiking</DotItem>
+          <DotItem>Baking</DotItem>
+        </ul>
+
         <h3 className="aboutMe-title">FUN STATS</h3>
-        <p className="card-bottom-p"></p>
+        <ul>
+          <DotItem>Age: {Age()}</DotItem>
+          <DotItem>Languages: English, Mandarin</DotItem>
+          <DotItem>Current City: Canberra, AU</DotItem>
+          <DotItem>Favor City: Portland</DotItem>
+          <DotItem>Cat: Addict</DotItem>
+          <DotItem>My car: VW GOLF</DotItem>
+          <DotItem>Country visited: 13</DotItem>
+        </ul>
+        <ImageZoom
+          image={{
+            src: Country,
+            alt: "404",
+            className: "img",
+            style: { width: "20%" },
+          }}
+          zoomImage={{
+            src: "Country",
+            alt: "404",
+          }}
+        />
       </div>
     </Card>
   );
