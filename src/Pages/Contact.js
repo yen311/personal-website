@@ -1,8 +1,9 @@
 import React from "react";
+import ContactContent from "../components/Contact/ContactContent";
 import Image from "../components/Common/Image";
 import About from "../components/Common/About";
 import Footer from "../components/Common/Footer";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Contact() {
   return (
@@ -11,6 +12,7 @@ function Contact() {
       exit={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <ContactContent />
       <Image />
       <About />
       <Footer />

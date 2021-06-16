@@ -63,9 +63,10 @@ function AboutContent() {
         <h3 className="aboutMe-title">FUN STATS</h3>
         <ul>
           <DotItem>Age: {Age()}</DotItem>
+          <DotItem>Born: Taoyuan, TW</DotItem>
           <DotItem>Languages: English, Mandarin</DotItem>
           <DotItem>Current City: Canberra, AU</DotItem>
-          <DotItem>Favor City: Portland</DotItem>
+          <DotItem>Favor City: Portland, OR</DotItem>
           <DotItem>Cat: Addict</DotItem>
           <DotItem>My car: VW GOLF</DotItem>
           <DotItem>Country visited: 13</DotItem>
