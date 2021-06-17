@@ -1,0 +1,10 @@
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+h4,
+.flex p {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}

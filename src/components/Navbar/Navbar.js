@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
+import { Link } from "react-router-dom";
+import DropdownItem from "./DropdownItem";
 import "./Navbar.css";
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
+  const [dropdown, setDropdown] = useState(false);
+
+  const mouseEnter = () => {
+    if (window.innerWidth < 950) {
+      setDropdown(false);
+    } else {
+      setDropdown(true);
+    }
+  };
+  const mouseLeave = () => {
+    setDropdown(false);
+  };
 
   const navOpenHandler = () => {
     setNavOpen(!navOpen);
@@ -21,7 +35,20 @@ function Navbar() {
           <ul className={navOpen ? "nav-menu open" : "nav-menu"}>
             <NavItem close={closeHamburger}>About Me</NavItem>
             <NavItem close={closeHamburger}>Resume</NavItem>
-            <NavItem close={closeHamburger}>Portfolio</NavItem>
+            <li
+              className="nav-item"
+              onMouseEnter={mouseEnter}
+              onMouseLeave={mouseLeave}
+            >
+              <Link
+                className="nav-links"
+                onClick={closeHamburger}
+                to="/portfolio"
+              >
+                Portfolio
+              </Link>
+              {dropdown && <DropdownItem />}
+            </li>
             <NavItem close={closeHamburger}>Contact</NavItem>
           </ul>
           <div className="menu-icon" onClick={navOpenHandler}>

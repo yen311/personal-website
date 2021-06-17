@@ -13,7 +13,7 @@ function About_Me() {
     >
       <AboutContent />
       <Image />
-      <About />
+      <About pages="about" />
       <Footer />
     </motion.div>
   );

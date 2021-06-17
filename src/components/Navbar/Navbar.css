@@ -17,15 +17,18 @@
 }
 .nav-item {
   border-right: dotted 1px rgba(111, 111, 111, 0.2);
-  padding: 20px 20px;
+  padding: 20px 0px;
   margin: auto 0px;
   list-style-type: none;
 }
+
 .nav-links {
+  padding: 35px 20px;
   color: grey;
   text-decoration: none;
   font-size: 16px;
 }
+
 .logo {
   font-weight: 900;
   color: black;
@@ -81,7 +84,6 @@
     border-bottom: solid 1px grey;
     padding-bottom: 3px;
   }
-
   .logo {
     border-bottom: none;
     padding-bottom: none;

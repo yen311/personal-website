@@ -30,7 +30,7 @@ function AboutContent() {
         <h1>About Me</h1>
       </div>
       <div className="card-bottom">
-        <h3 className="aboutMe-title">INTRO</h3>
+        <h3 className="h3-title">INTRO</h3>
         <p className="card-bottom-p">
           I am the second-year master student in computer science currently. My
           coding journey start from 2019. In the past two years study. I have
@@ -48,7 +48,7 @@ function AboutContent() {
           looking interface will always being my goals. I believe that it can
           bring lot of happiness both for me and the users.
         </p>
-        <h3 className="aboutMe-title">ENTERAINMENT</h3>
+        <h3 className="h3-title">ENTERAINMENT</h3>
 
         <ul>
           <DotItem>Fishing</DotItem>
@@ -58,9 +58,10 @@ function AboutContent() {
           <DotItem>Baseball</DotItem>
           <DotItem>Hiking</DotItem>
           <DotItem>Baking</DotItem>
+          <DotItem>Coffee</DotItem>
         </ul>
 
-        <h3 className="aboutMe-title">FUN STATS</h3>
+        <h3 className="h3-title">FUN STATS</h3>
         <ul>
           <DotItem>Age: {Age()}</DotItem>
           <DotItem>Born: Taoyuan, TW</DotItem>
@@ -68,6 +69,7 @@ function AboutContent() {
           <DotItem>Current City: Canberra, AU</DotItem>
           <DotItem>Favor City: Portland, OR</DotItem>
           <DotItem>Cat: Addict</DotItem>
+          <DotItem>Coffee: Lover (Fan of Latta art)</DotItem>
           <DotItem>My car: VW GOLF</DotItem>
           <DotItem>Country visited: 13</DotItem>
         </ul>

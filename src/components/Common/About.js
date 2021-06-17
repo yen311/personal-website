@@ -1,8 +1,22 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./About.css";
 
-function About() {
+function About(props) {
+  const page = () => {
+    switch (props.pages) {
+      case "home":
+        return { text: "Check out more!", link: "resume" };
+      case "about":
+        return { text: "Check out more!", link: "resume" };
+      case "resume":
+        return { text: "Click here get some fun!!", link: "portfolio" };
+      case "portfolio":
+        return { text: "Contact me", link: "contact" };
+      case "contact":
+        return { text: "Hit a like!!", link: "contact" };
+    }
+  };
   return (
     <div className="about-all">
       <h5 className="about-title">ABOUT</h5>
@@ -13,8 +27,8 @@ function About() {
         building the cool stuffs.
       </p>
 
-      <Link className="about-link" to="resume">
-        Check more out!
+      <Link className="about-link" to={page().link}>
+        {page().text}
       </Link>
     </div>
   );

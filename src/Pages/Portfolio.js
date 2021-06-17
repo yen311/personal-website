@@ -12,7 +12,7 @@ function Protfolio() {
       animate={{ opacity: 1 }}
     >
       <Image />
-      <About />
+      <About pages="portfolio" />
       <Footer />
     </motion.div>
   );

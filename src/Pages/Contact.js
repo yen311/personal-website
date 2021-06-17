@@ -14,7 +14,7 @@ function Contact() {
     >
       <ContactContent />
       <Image />
-      <About />
+      <About pages="contact" />
       <Footer />
     </motion.div>
   );

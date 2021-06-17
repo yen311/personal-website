@@ -2,7 +2,8 @@ import React from "react";
 import Image from "../components/Common/Image";
 import About from "../components/Common/About";
 import Footer from "../components/Common/Footer";
-import { AnimatePresence, motion } from "framer-motion";
+import ResumeContent from "../components/Rseume/ResumeContent";
+import { motion } from "framer-motion";
 
 function Resume() {
   return (
@@ -11,8 +12,9 @@ function Resume() {
       exit={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <ResumeContent />
       <Image />
-      <About />
+      <About pages="resume" />
       <Footer />
     </motion.div>
   );
