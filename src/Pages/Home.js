@@ -3,7 +3,7 @@ import HomeContent from "../components/Home/HomeContent";
 import Image from "../components/Common/Image";
 import About from "../components/Common/About";
 import Footer from "../components/Common/Footer";
-import { AnimatePresence, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 function Home() {
   return (

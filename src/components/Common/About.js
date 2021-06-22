@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import "./About.css";
 
@@ -15,6 +15,8 @@ function About(props) {
         return { text: "Contact me", link: "contact" };
       case "contact":
         return { text: "Hit a like!!", link: "contact" };
+      default:
+        return { text: "", link: "" };
     }
   };
   return (

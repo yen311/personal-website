@@ -6,7 +6,7 @@ import About from "./Pages/About_Me";
 import Resume from "./Pages/Resume";
 import Portfolio from "./Pages/Portfolio";
 import Contact from "./Pages/Contact";
-import { AnimatePresence, Motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import ScrollUp from "./components/UI/ScrollUp";
 function App() {
   return (

@@ -1,0 +1,19 @@
+.Data {
+  background-color: #b7b7a4;
+}
+.Web {
+  background-color: #ddbea9;
+}
+.Software {
+  background-color: #ffe8d6;
+}
+
+.skill-bar {
+  border-radius: 5px;
+}
+
+.skill-name {
+  padding: 5px 10px;
+  margin: 20px 0px;
+  width: fit-content;
+}
