@@ -29,7 +29,7 @@ function About(props) {
         building the cool stuffs.
       </p>
 
-      <Link className="about-link" to={`/${page().link}`}>
+      <Link className="about-link" to={`/resume`}>
         {page().text}
       </Link>
     </div>
