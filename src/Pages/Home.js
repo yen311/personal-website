@@ -14,7 +14,7 @@ function Home() {
     >
       <HomeContent />
       <Image />
-      <About pages="home" />
+      <About pages="personal-website" />
       <Footer />
     </motion.div>
   );

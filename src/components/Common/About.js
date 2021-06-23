@@ -5,7 +5,7 @@ import "./About.css";
 function About(props) {
   const page = () => {
     switch (props.pages) {
-      case "home":
+      case "personal-website":
         return { text: "Check out more!", link: "resume" };
       case "about":
         return { text: "Check out more!", link: "resume" };

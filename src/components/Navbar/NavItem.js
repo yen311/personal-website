@@ -9,7 +9,7 @@ function NavItem(props) {
         className={`nav-links ${props.className}`}
         to={
           props.children === "Yen Kuo"
-            ? "home"
+            ? "personal-website"
             : `${props.children.toLowerCase()}`
         }
         onClick={props.close}
