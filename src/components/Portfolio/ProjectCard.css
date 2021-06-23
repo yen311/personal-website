@@ -1,0 +1,37 @@
+.projectItem {
+  border: 1px solid rgb(171, 171, 171);
+  margin: 60px 40px;
+  box-shadow: -5px -5px rgb(233, 233, 233);
+}
+
+.project-name,
+.project-year {
+  margin: 10px 15px;
+}
+
+.project-year,
+.project-link {
+  font-family: "Stick", sans-serif;
+}
+
+.project-year {
+  font-size: 0.6em;
+}
+
+.project-down {
+  position: relative;
+  height: 400px;
+  background-size: 100% 100%;
+}
+
+.project-description {
+  font-family: "Stick", sans-serif;
+  padding: 3% 1%;
+  color: rgb(84, 84, 66);
+  width: 98%;
+  background-color: rgba(254, 247, 247, 0.6);
+  z-index: 1;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}

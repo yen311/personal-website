@@ -28,6 +28,7 @@ function AboutContent() {
     <Card className="card-center">
       <div className="card-top">
         <h1>About Me</h1>
+        <p className="card-top-p">Fun facts</p>
       </div>
       <div className="card-bottom">
         <h3 className="h3-title">INTRO</h3>

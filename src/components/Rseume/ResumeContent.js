@@ -20,6 +20,7 @@ function ResumeContent() {
     <Card className="card-center">
       <div className="card-top">
         <h1>Resume</h1>
+        <p className="card-top-p">My past experience</p>
       </div>
       <div className="card-bottom">
         <h3 className="h3-title">Education</h3>

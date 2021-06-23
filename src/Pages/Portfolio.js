@@ -1,4 +1,5 @@
 import React from "react";
+import PortfolioContent from "../components/Portfolio/PortfolioContent";
 import Image from "../components/Common/Image";
 import About from "../components/Common/About";
 import Footer from "../components/Common/Footer";
@@ -11,6 +12,7 @@ function Protfolio() {
       exit={{ opacity: 0 }}
       animate={{ opacity: 1 }}
     >
+      <PortfolioContent />
       <Image />
       <About pages="portfolio" />
       <Footer />

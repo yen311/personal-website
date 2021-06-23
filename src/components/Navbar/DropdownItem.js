@@ -27,7 +27,7 @@ function DropdownItem() {
       {dropItem.map((item, key) => {
         return (
           <li key={key} onClick={clickHandler}>
-            <Link className={item.cName} to={item.path}>
+            <Link className={item.cName} to="/portfolio">
               {item.title}
             </Link>
           </li>
