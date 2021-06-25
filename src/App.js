@@ -1,6 +1,11 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import {
+  HashRouter,
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 import Home from "./Pages/Home";
 import About from "./Pages/About_Me";
 import Resume from "./Pages/Resume";
@@ -11,7 +16,7 @@ import ScrollUp from "./components/UI/ScrollUp";
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <ScrollUp />
         <Navbar />
         <AnimatePresence>
@@ -23,7 +28,7 @@ function App() {
             <Route path="/contact" exact component={Contact} />
           </Switch>
         </AnimatePresence>
-      </Router>
+      </HashRouter>
     </div>
   );
 }
