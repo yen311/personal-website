@@ -21,7 +21,7 @@ function App() {
         <Navbar />
         <AnimatePresence>
           <Switch>
-            <Route path="/personal-website" exact component={Home} />
+            <Route path="/" exact component={Home} />
             <Route path="/about me" exact component={About} />
             <Route path="/resume" exact component={Resume} />
             <Route path="/portfolio" exact component={Portfolio} />
