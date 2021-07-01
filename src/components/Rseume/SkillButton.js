@@ -3,22 +3,29 @@ import "./SkillsButton.css";
 
 function SkillButton(props) {
   const [status, setStatus] = useState("All");
-
+  const { passData } = props;
   useEffect(() => {
-    props.passData(status);
-  }, [status, props]);
+    passData(status);
+  }, [status, passData]);
 
-  const allHandler = () => {
-    setStatus("All");
-  };
-  const webHandler = () => {
-    setStatus("Web");
-  };
-  const softwareHandler = () => {
-    setStatus("Software");
-  };
-  const dataHandler = () => {
-    setStatus("Data");
+  const allHandler = (e) => {
+    console.log(e.target.innerText);
+    switch (e.target.innerText) {
+      case "All":
+        setStatus("All");
+        break;
+      case "Software Development":
+        setStatus("Software");
+        break;
+      case "Data":
+        setStatus("Data");
+        break;
+      case "Web Development":
+        setStatus("Web");
+        break;
+      default:
+        setStatus("All");
+    }
   };
 
   return (
@@ -28,13 +35,13 @@ function SkillButton(props) {
         <button className="about-link" onClick={allHandler}>
           All
         </button>
-        <button className="about-link" onClick={softwareHandler}>
+        <button className="about-link" onClick={allHandler}>
           Software Development
         </button>
-        <button className="about-link" onClick={dataHandler}>
+        <button className="about-link" onClick={allHandler}>
           Data
         </button>
-        <button className="about-link" onClick={webHandler}>
+        <button className="about-link" onClick={allHandler}>
           Web Development
         </button>
       </div>

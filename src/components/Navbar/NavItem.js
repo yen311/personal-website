@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function NavItem(props) {
-  console.log(props);
   return (
     <li className="nav-item">
       <Link
