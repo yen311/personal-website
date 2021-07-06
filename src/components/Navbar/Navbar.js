@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import DropdownItem from "./DropdownItem";
 import "./Navbar.css";
 
@@ -40,13 +40,14 @@ function Navbar() {
               onMouseEnter={mouseEnter}
               onMouseLeave={mouseLeave}
             >
-              <Link
+              <NavLink
+                activeClassName="active"
                 className="nav-links"
                 onClick={closeHamburger}
                 to="/portfolio"
               >
                 Portfolio
-              </Link>
+              </NavLink>
               {dropdown && <DropdownItem />}
             </li>
             <NavItem close={closeHamburger}>Contact</NavItem>

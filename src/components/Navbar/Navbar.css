@@ -24,7 +24,7 @@
 }
 
 .nav-links {
-  padding: 35px 20px;
+  padding: 28px 20px;
   color: grey;
   text-decoration: none;
   font-size: 16px;
@@ -49,6 +49,10 @@
 
 .menu-icon {
   display: none;
+}
+
+.active {
+  color: olive;
 }
 
 @media screen and (max-width: 950px) {

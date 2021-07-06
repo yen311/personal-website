@@ -1,8 +1,10 @@
 import "./App.css";
 import Navbar from "./components/Navbar/Navbar";
 import {
+  Redirect,
   HashRouter,
-  BrowserRouter as Router,
+  Router,
+  BrowserRouter,
   Switch,
   Route,
 } from "react-router-dom";
@@ -21,7 +23,10 @@ function App() {
         <Navbar />
         <AnimatePresence>
           <Switch>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact>
+              <Redirect to="/home" />
+            </Route>
+            <Route path="/home" exact component={Home} />
             <Route path="/about me" exact component={About} />
             <Route path="/resume" exact component={Resume} />
             <Route path="/portfolio" exact component={Portfolio} />
