@@ -9,6 +9,7 @@ function ExperienceItem(props) {
         <p>{props.data.Loc}</p>
         <p>{props.data.Interval}</p>
       </div>
+      {props.data.Position && <p>{props.data.Position}</p>}
       {props.data.Descriptions.map((description, index) => (
         <p key={index} className="card-bottom-p">
           {description}

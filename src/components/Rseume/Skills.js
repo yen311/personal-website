@@ -1,22 +1,19 @@
 import React from "react";
 import "./Skills.css";
+import { useSelector } from "react-redux";
 
-function Skills(props) {
-  let filterSkill = [];
-  for (let skill of props.data) {
-    if (props.currentStatus === "All") {
-      filterSkill.push(skill);
-    } else {
-      if (props.currentStatus === skill.group) {
-        filterSkill.push(skill);
-      }
-    }
-  }
+function Skills() {
+  const items = useSelector((state) => state.skill.skills);
+
   return (
     <div>
-      {filterSkill.map((skill, index) => (
-        <div className={`${skill.group} skill-bar`} key={index}>
-          <p className="skill-name">{skill.name}</p>
+      {items.map((item, index) => (
+        <div key={index} className="skill-bar">
+          <div className={`title _${item.percentage} ${item.group}`}>
+            {" "}
+            {item.name}
+          </div>
+          <div className="percentage">{item.percentage}/5</div>
         </div>
       ))}
     </div>

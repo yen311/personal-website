@@ -51,13 +51,28 @@ const CourseData = [
   },
   {
     title: "Comp8110",
-    name: "Relational DatabasesManaging Software Projects in a System Context",
+    name: "Managing Software Projects in a System Context",
     link: "https://programsandcourses.anu.edu.au/course/comp8110",
   },
   {
     title: "Comp8715",
     name: "Computing Project",
     link: "https://programsandcourses.anu.edu.au/course/comp8715",
+  },
+  {
+    title: "Comp6720",
+    name: "Art and Interaction in New Media",
+    link: "https://programsandcourses.anu.edu.au/2021/course/COMP6720",
+  },
+  {
+    title: "Comp8430",
+    name: "Data Wrangling",
+    link: "https://programsandcourses.anu.edu.au/2021/course/COMP8430",
+  },
+  {
+    title: "Comp6120",
+    name: "Software Engineering",
+    link: "https://programsandcourses.anu.edu.au/course/comp6120",
   },
   {
     title: "Udemy",
@@ -73,6 +88,16 @@ const CourseData = [
     title: "Udemy",
     name: "The Complete JavaScript Course 2021: From Zero to Expert!",
     link: "https://www.udemy.com/course/the-complete-javascript-course/",
+  },
+  {
+    title: "Udemy",
+    name: "Ionic React: Cross-Platform Mobile Development with Ionic 5",
+    link: "https://www.udemy.com/course/ionic-react/",
+  },
+  {
+    title: "Udemy",
+    name: "React Native - The Practical Guide",
+    link: "https://www.udemy.com/course/react-native-the-practical-guide/",
   },
 ];
 

@@ -1,19 +1,52 @@
 .Data {
-  background-color: #b7b7a4;
+  background-color: #9ed55f;
 }
 .Web {
-  background-color: #ddbea9;
+  background-color: #606c38;
 }
 .Software {
-  background-color: #ffe8d6;
+  background-color: #fefae0;
+}
+.Other {
+  background-color: #dda15e;
+}
+.Soft {
+  background-color: #bc6c25;
 }
 
 .skill-bar {
+  background-color: rgb(218, 217, 217);
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+
+  margin: 20px 0px;
 }
 
-.skill-name {
+._1,
+._2,
+._3,
+._4,
+._5 {
+  border-radius: 5px;
   padding: 5px 10px;
-  margin: 20px 0px;
-  width: fit-content;
+}
+._1 {
+  width: 20%;
+}
+._2 {
+  width: 40%;
+}
+._3 {
+  width: 60%;
+}
+._4 {
+  width: 80%;
+}
+._5 {
+  width: 100%;
+}
+
+.percentage {
+  padding: 5px 10px;
 }

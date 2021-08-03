@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Card from "../UI/Card";
 import ExperienceItem from "./ExperienceItem";
 import ProjectItem from "./ProjectItem";
@@ -11,11 +12,6 @@ import Course from "./Course";
 import CourseData from "../../data/CourseData";
 
 function ResumeContent() {
-  const [currentStatus, setcurrentStatus] = useState("All");
-  const dataHandler = (data) => {
-    setcurrentStatus(data);
-  };
-
   return (
     <Card className="card-center">
       <div className="card-top">
@@ -26,18 +22,30 @@ function ResumeContent() {
         <h3 className="h3-title">Education</h3>
         <ExperienceItem data={ExperienceData.ANU} />
         <ExperienceItem data={ExperienceData.PSU} />
-        <h3 className="h3-title">Project Experience</h3>
+
+        <h3 className="h3-title">Work Experience </h3>
+        <ExperienceItem data={ExperienceData.CBRLife} />
+        <ExperienceItem data={ExperienceData.FedEx} />
+        <ExperienceItem data={ExperienceData.Fubon} />
+        <h3 className="h3-title">
+          Project Experience{" "}
+          <span>
+            Link for all project source code can be found in{" "}
+            <Link to="./portfolio" className="link">
+              Protfolio
+            </Link>{" "}
+            section
+          </span>
+        </h3>
+
         <ProjectItem data={ProjectExperienceData.personalWebsite} />
         <ProjectItem data={ProjectExperienceData.ourCulture} />
         <ProjectItem data={ProjectExperienceData.WTFood} />
         <ProjectItem data={ProjectExperienceData.Metro} />
         <ProjectItem data={ProjectExperienceData.lakeData} />
-        <h3 className="h3-title">Work Experience</h3>
-        <ExperienceItem data={ExperienceData.FedEx} />
-        <ExperienceItem data={ExperienceData.Fubon} />
       </div>
-      <SkillButton passData={dataHandler} />
-      <Skills data={SkillData} currentStatus={currentStatus} />
+      <SkillButton />
+      <Skills />
       <Course data={CourseData} />
     </Card>
   );
