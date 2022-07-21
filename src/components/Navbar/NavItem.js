@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./Navbar.css";
 
 function NavItem(props) {
   return (
-    <li className="nav-item">
+    <li className='nav-item'>
       <NavLink
-        activeClassName="active"
+        activeClassName='active'
         className={`nav-links ${props.className}`}
         to={
           props.children === "Yen Kuo"

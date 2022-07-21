@@ -23,8 +23,8 @@ function ContactContent() {
     "m",
   ];
   const [reverse, setReverse] = useState(false);
-  const [count, setCount] = useState(0);
-  const [email, setEmail] = useState("");
+  const [count, setCount] = useState(1);
+  const [email, setEmail] = useState("K");
   useEffect(() => {
     const interval = setInterval(() => {
       if (!reverse) {
@@ -36,7 +36,7 @@ function ContactContent() {
       } else {
         setEmail(email.slice(0, -1));
         setCount(count - 1);
-        if (count <= 1) {
+        if (count <= 2) {
           setReverse(false);
         }
       }
@@ -45,16 +45,16 @@ function ContactContent() {
   }, [email, count, reverse]);
 
   return (
-    <Card className="card-center">
-      <div className="card-top">
-        <h1 className="card-title">CONTACT</h1>
-        <p className="card-top-p">
+    <Card className='card-center'>
+      <div className='card-top'>
+        <h1 className='card-title'>CONTACT</h1>
+        <p className='card-top-p'>
           You can reach me out from any media list below or email:)
         </p>
         <p>{email}</p>
       </div>
-      <div className="card-bottom">
-        <div className="card-botttom-p">
+      <div className='card-bottom'>
+        <div className='card-botttom-p'>
           <FooterIcon />
         </div>
       </div>

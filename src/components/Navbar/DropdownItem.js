@@ -23,11 +23,11 @@ function DropdownItem() {
   const [click, setClick] = useState(false);
   const clickHandler = () => setClick(!click);
   return (
-    <ul className={click ? "dropdown-menu clicked" : "dropdown-menu"}>
+    <ul className={click ? "_dropdown-menu clicked" : "_dropdown-menu"}>
       {dropItem.map((item, key) => {
         return (
           <li key={key} onClick={clickHandler}>
-            <Link className={item.cName} to="/portfolio">
+            <Link className={item.cName} to='/portfolio'>
               {item.title}
             </Link>
           </li>

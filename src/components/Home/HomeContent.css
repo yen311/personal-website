@@ -10,7 +10,6 @@
   letter-spacing: 3px;
 }
 .card-top-p {
-  font-family: "Source Sans Pro", sans-serif;
   margin-top: 10px;
   margin-bottom: 20px;
   font-weight: 200;
@@ -22,8 +21,17 @@
 }
 
 .card-bottom-p {
-  font-family: "Source Sans Pro", sans-serif;
   line-height: 3;
+}
+
+.card-bottom > .like-p {
+  margin: 15px 0px;
+  display: flex;
+  justify-content: center;
+}
+.card-bottom > .like-p > .far {
+  margin-left: 30px;
+  font-size: 2em;
 }
 
 .link {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import NavItem from "./NavItem";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import DropdownItem from "./DropdownItem";
 import "./Navbar.css";
 
@@ -8,7 +8,7 @@ function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
-  const mouseEnter = () => {
+  const mouseEnter = (e) => {
     if (window.innerWidth < 950) {
       setDropdown(false);
     } else {
@@ -27,24 +27,24 @@ function Navbar() {
   };
   return (
     <div>
-      <nav className="navbar">
-        <div className="navbar-container">
-          <NavItem className="logo" close={closeHamburger}>
+      <nav className='_navbar'>
+        <div className='d-flex'>
+          <NavItem className='logo' close={closeHamburger}>
             Yen Kuo
           </NavItem>
           <ul className={navOpen ? "nav-menu open" : "nav-menu"}>
             <NavItem close={closeHamburger}>About Me</NavItem>
             <NavItem close={closeHamburger}>Resume</NavItem>
             <li
-              className="nav-item"
+              className='nav-item'
               onMouseEnter={mouseEnter}
               onMouseLeave={mouseLeave}
             >
               <NavLink
-                activeClassName="active"
-                className="nav-links"
+                activeClassName='active'
+                className='nav-links'
                 onClick={closeHamburger}
-                to="/portfolio"
+                to='/portfolio'
               >
                 Portfolio
               </NavLink>
@@ -52,7 +52,7 @@ function Navbar() {
             </li>
             <NavItem close={closeHamburger}>Contact</NavItem>
           </ul>
-          <div className="menu-icon" onClick={navOpenHandler}>
+          <div className='menu-icon' onClick={navOpenHandler}>
             <i className={navOpen ? "fas fa-times" : "fas fa-bars"} />
           </div>
         </div>

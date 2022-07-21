@@ -1,14 +1,11 @@
-import React from "react";
-import "./SkillsButton.css";
-import { useDispatch } from "react-redux";
-import { skillAction } from "../../store/skillSlice";
+import React from 'react';
+import './SkillsButton.css';
+import { useDispatch } from 'react-redux';
+import { skillAction } from '../../store/skillSlice';
 
 function SkillButton(props) {
   const dispatch = useDispatch();
-  const filterWebHandler = () => {
-    dispatch(skillAction.findWebSkills());
-  };
-  const filterSoftwareHander = () => {
+  const filterDevelopmentHandler = () => {
     dispatch(skillAction.findSoftWareSkills());
   };
   const filterDataHander = () => {
@@ -25,28 +22,25 @@ function SkillButton(props) {
   };
   return (
     <>
-      <h3 className="h3-title">
-        Skills{" "}
+      <h3 className='h3-title'>
+        Skills{' '}
         <span>I will try my best to be honest on rating my skills 😆</span>
       </h3>
       <div>
-        <button className="about-link" onClick={filterAllHander}>
+        <button className='about-link' onClick={filterAllHander}>
           All
         </button>
-        <button className="about-link" onClick={filterSoftwareHander}>
-          Software Development
+        <button className='about-link' onClick={filterDevelopmentHandler}>
+          Development
         </button>
-        <button className="about-link" onClick={filterDataHander}>
+        <button className='about-link' onClick={filterDataHander}>
           Data
         </button>
-        <button className="about-link" onClick={filterWebHandler}>
-          Web Development
-        </button>
-        <button className="about-link" onClick={filterSoftSkillHandler}>
+        <button className='about-link' onClick={filterSoftSkillHandler}>
           Soft Skills
         </button>
-        <button className="about-link" onClick={filterOtherSkillHandler}>
-          Others
+        <button className='about-link' onClick={filterOtherSkillHandler}>
+          Tools
         </button>
       </div>
     </>

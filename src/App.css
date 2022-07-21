@@ -1,8 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner:wght@700&family=Edu+SA+Beginner:wght@700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
-  font-family: "Oswald", sans-serif;
+  font-family: "Edu SA Beginner", cursive;
 }
 body {
   background-color: rgb(247, 244, 244);
+}
+
+.sub-title {
+  letter-spacing: 0.2rem;
+  border-bottom: 3px solid black;
+}
+
+.text-muted {
+  line-height: 2em;
 }

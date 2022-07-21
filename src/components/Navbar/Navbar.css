@@ -1,4 +1,4 @@
-.navbar {
+._navbar {
   position: fixed;
   top: 0;
   left: 0;
@@ -8,8 +8,9 @@
   z-index: 5;
 }
 
-.navbar-container {
-  display: flex;
+._navbar ul {
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .nav-menu {

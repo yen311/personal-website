@@ -1,52 +1,13 @@
-.Data {
-  background-color: #9ed55f;
-}
-.Web {
-  background-color: #606c38;
-}
-.Software {
-  background-color: #fefae0;
-}
-.Other {
-  background-color: #dda15e;
-}
-.Soft {
-  background-color: #bc6c25;
+.progress {
+  background-color: rgb(230, 230, 230);
+  height: 2em;
 }
 
-.skill-bar {
-  background-color: rgb(218, 217, 217);
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-
-  margin: 20px 0px;
-}
-
-._1,
-._2,
-._3,
-._4,
-._5 {
-  border-radius: 5px;
-  padding: 5px 10px;
-}
-._1 {
-  width: 20%;
-}
-._2 {
-  width: 40%;
-}
-._3 {
-  width: 60%;
-}
-._4 {
-  width: 80%;
-}
-._5 {
-  width: 100%;
-}
-
-.percentage {
-  padding: 5px 10px;
+.progress-done {
+  opacity: 0;
+  width: 0;
+  transition: 3s ease;
+  height: 2em;
+  text-align: end;
+  color: #eee;
 }

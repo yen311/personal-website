@@ -1,22 +1,38 @@
-import React from "react";
 import "./Skills.css";
-import { useSelector } from "react-redux";
+import { useState, useEffect } from "react";
+import { InView } from "react-intersection-observer";
 
-function Skills() {
-  const items = useSelector((state) => state.skill.skills);
+function Skills({ done, children, inView }) {
+  const [style, setStyle] = useState({});
+
+  useEffect(() => {
+    if (inView) {
+      setTimeout(() => {
+        const newStyle = {
+          "background-color": "olive",
+          opacity: 1,
+          width: `${done}%`,
+        };
+        setStyle(newStyle);
+      }, 500);
+    } else {
+      const newStyle = {
+        opacity: 0,
+        width: `0%`,
+      };
+      setStyle(newStyle);
+    }
+  }, [inView, done]);
 
   return (
-    <div>
-      {items.map((item, index) => (
-        <div key={index} className="skill-bar">
-          <div className={`title _${item.percentage} ${item.group}`}>
-            {" "}
-            {item.name}
-          </div>
-          <div className="percentage">{item.percentage}/5</div>
+    <InView className='my-3'>
+      <p className='m-0'>{children}</p>
+      <div className='progress w-100'>
+        <div className='progress-done  px-2' style={style}>
+          {done}%
         </div>
-      ))}
-    </div>
+      </div>
+    </InView>
   );
 }
 

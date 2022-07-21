@@ -1,22 +1,23 @@
-.dropdown-menu {
+._dropdown-menu {
   width: 200px;
   position: absolute;
   top: 80px;
   list-style: none;
   text-align: start;
+  background: grey;
 }
 
-.dropdown-menu li {
+._dropdown-menu li {
   background: grey;
   cursor: pointer;
   opacity: 0.8;
 }
 
-.dropdown-menu li:hover {
+._dropdown-menu li:hover {
   background: rgb(171, 171, 171);
 }
 
-.dropdown-menu.clicked {
+._dropdown-menu.clicked {
   display: none;
 }
 
@@ -25,6 +26,6 @@
   height: 100%;
   width: 100%;
   text-decoration: none;
-  color: #fff;
+  color: #fff !important;
   padding: 20px 20px;
 }
