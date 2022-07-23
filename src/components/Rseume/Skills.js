@@ -1,15 +1,30 @@
-import "./Skills.css";
 import { useState, useEffect } from "react";
 import { InView } from "react-intersection-observer";
 
-function Skills({ done, children, inView }) {
+function Skills({ done, children, inView, type }) {
   const [style, setStyle] = useState({});
-
+  let backgroundColor = "darkolivegreen";
+  switch (type) {
+    case "Software":
+      break;
+    case "Data":
+      // code block
+      backgroundColor = "steelblue";
+      break;
+    case "Tool":
+      backgroundColor = "darkkhaki";
+      break;
+    case "SoftSkill":
+      backgroundColor = "indianred";
+      break;
+    default:
+    // code block
+  }
   useEffect(() => {
     if (inView) {
       setTimeout(() => {
         const newStyle = {
-          "background-color": "olive",
+          backgroundColor: backgroundColor,
           opacity: 1,
           width: `${done}%`,
         };

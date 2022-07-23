@@ -3,6 +3,7 @@ import NavItem from "./NavItem";
 import { NavLink } from "react-router-dom";
 import DropdownItem from "./DropdownItem";
 import "./Navbar.css";
+import { FaAlignJustify, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [navOpen, setNavOpen] = useState(false);
@@ -53,7 +54,7 @@ function Navbar() {
             <NavItem close={closeHamburger}>Contact</NavItem>
           </ul>
           <div className='menu-icon' onClick={navOpenHandler}>
-            <i className={navOpen ? "fas fa-times" : "fas fa-bars"} />
+            {navOpen ? <FaTimes /> : <FaAlignJustify />}
           </div>
         </div>
       </nav>

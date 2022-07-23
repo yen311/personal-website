@@ -57,7 +57,7 @@
 }
 
 @media screen and (max-width: 950px) {
-  .navbar {
+  ._navbar {
     z-index: 2;
   }
   .nav-menu {

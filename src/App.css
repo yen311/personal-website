@@ -17,3 +17,18 @@ body {
 .text-muted {
   line-height: 2em;
 }
+
+/* Skill bar */
+.progress {
+  background-color: rgb(230, 230, 230);
+  height: 2em;
+}
+
+.progress-done {
+  opacity: 0;
+  width: 0;
+  transition: 3s ease;
+  height: 2em;
+  text-align: end;
+  color: #eee;
+}

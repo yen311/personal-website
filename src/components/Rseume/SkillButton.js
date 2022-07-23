@@ -1,49 +1,26 @@
-import React from 'react';
-import './SkillsButton.css';
-import { useDispatch } from 'react-redux';
-import { skillAction } from '../../store/skillSlice';
+import ButtonGroup from "react-bootstrap/ButtonGroup";
+import ToggleButton from "react-bootstrap/ToggleButton";
 
-function SkillButton(props) {
-  const dispatch = useDispatch();
-  const filterDevelopmentHandler = () => {
-    dispatch(skillAction.findSoftWareSkills());
-  };
-  const filterDataHander = () => {
-    dispatch(skillAction.findDataSkills());
-  };
-  const filterAllHander = () => {
-    dispatch(skillAction.findAllSkills());
-  };
-  const filterSoftSkillHandler = () => {
-    dispatch(skillAction.findSoftSkills());
-  };
-  const filterOtherSkillHandler = () => {
-    dispatch(skillAction.findOtherSkills());
-  };
+function SkillButton({ types, btnValue, setBtnValue, loading }) {
   return (
-    <>
-      <h3 className='h3-title'>
-        Skills{' '}
-        <span>I will try my best to be honest on rating my skills 😆</span>
-      </h3>
-      <div>
-        <button className='about-link' onClick={filterAllHander}>
-          All
-        </button>
-        <button className='about-link' onClick={filterDevelopmentHandler}>
-          Development
-        </button>
-        <button className='about-link' onClick={filterDataHander}>
-          Data
-        </button>
-        <button className='about-link' onClick={filterSoftSkillHandler}>
-          Soft Skills
-        </button>
-        <button className='about-link' onClick={filterOtherSkillHandler}>
-          Tools
-        </button>
-      </div>
-    </>
+    <div className='mx-auto my-4'>
+      <ButtonGroup>
+        {types.map((type, idx) => (
+          <ToggleButton
+            key={idx}
+            id={`radio-${idx}`}
+            type='radio'
+            variant='outline-secondary'
+            value={type.value}
+            checked={btnValue === type.value}
+            onChange={(e) => setBtnValue(e.currentTarget.value)}
+            disabled={loading ? true : false}
+          >
+            {type.name}
+          </ToggleButton>
+        ))}
+      </ButtonGroup>
+    </div>
   );
 }
 

@@ -10,7 +10,15 @@ import { useEffect } from "react";
 import { FaGraduationCap, FaBlackTie, FaCode } from "react-icons/fa";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import { useInView } from "react-intersection-observer";
-import SkillData from "../../data/SkillsData";
+import Alert from "react-bootstrap/Alert";
+
+const types = [
+  { name: "All", value: "All" },
+  { name: "Software Development", value: "Software" },
+  { name: "Data", value: "Data" },
+  { name: "Tools", value: "Tool" },
+  { name: "SoftSkill", value: "SoftSkill" },
+];
 
 function ResumeContent() {
   const [isFetching, setIsFetching] = useState(true);
@@ -22,6 +30,7 @@ function ResumeContent() {
   const [ref, inView] = useInView({
     threshold: 0,
   });
+  const [btnValue, setBtnValue] = useState("All");
 
   useEffect(() => {
     fetch("https://yen-website-api.herokuapp.com/api/resume/")
@@ -35,13 +44,24 @@ function ResumeContent() {
   }, []);
 
   useEffect(() => {
-    fetch("https://yen-website-api.herokuapp.com/api/skill/")
+    setIsFetching1(true);
+    fetch("http://127.0.0.1:7000/api/skill/", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ type: btnValue }),
+    })
       .then((response) => response.json())
       .then((data) => {
         setIsFetching1(false);
         setSkills(data.skills);
+      })
+      .catch(() => {
+        setIsFetching1(false);
+        setSkills(null);
       });
-  }, []);
+  }, [btnValue]);
 
   return (
     <Card className='card-center'>
@@ -94,21 +114,34 @@ function ResumeContent() {
           })
         )}
       </div>
-      <SkillButton />
+      <SkillButton
+        types={types}
+        btnValue={btnValue}
+        setBtnValue={setBtnValue}
+        loading={isFetching1}
+      />
       {isFetching1 ? (
         <LoadingSpinner>Loading</LoadingSpinner>
-      ) : (
+      ) : skills !== null ? (
         <div ref={ref}>
           {skills.map((item, key) => {
             return (
-              <Skills done={item.percentage} inView={inView}>
+              <Skills
+                done={item.percentage}
+                inView={inView}
+                key={key}
+                type={item.type}
+              >
                 {item.name}
               </Skills>
             );
           })}
         </div>
+      ) : (
+        <Alert key='danger' variant='danger'>
+          Error
+        </Alert>
       )}
-
       <Course data={CourseData} />
     </Card>
   );
