@@ -45,7 +45,7 @@ function ResumeContent() {
 
   useEffect(() => {
     setIsFetching1(true);
-    fetch("http://127.0.0.1:7000/api/skill/", {
+    fetch("https://yen-website-api.herokuapp.com/api/skill/", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
