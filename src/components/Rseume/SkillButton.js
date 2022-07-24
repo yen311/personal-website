@@ -4,7 +4,7 @@ import ToggleButton from "react-bootstrap/ToggleButton";
 function SkillButton({ types, btnValue, setBtnValue, loading }) {
   return (
     <div className='mx-auto my-4'>
-      <ButtonGroup>
+      <ButtonGroup size='sm'>
         {types.map((type, idx) => (
           <ToggleButton
             key={idx}
