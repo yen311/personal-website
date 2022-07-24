@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Card from "../UI/Card";
 import ExperienceItem from "./ExperienceItem";
 import Skills from "./Skills";
 import SkillButton from "./SkillButton";
 import Course from "./Course";
-import CourseData from "../../data/CourseData";
-import { useEffect } from "react";
-import { FaGraduationCap, FaBlackTie, FaCode } from "react-icons/fa";
+import {
+  FaGraduationCap,
+  FaBlackTie,
+  FaCode,
+  FaCertificate,
+  FaBookReader,
+} from "react-icons/fa";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import { useInView } from "react-intersection-observer";
 import Alert from "react-bootstrap/Alert";
+import useScript from "../Hooks/useScript";
 
 const types = [
   { name: "All", value: "All" },
@@ -21,30 +26,41 @@ const types = [
 ];
 
 function ResumeContent() {
-  const [isFetching, setIsFetching] = useState(true);
-  const [isFetching1, setIsFetching1] = useState(true);
+  const [isFetchingResume, setIsFetchingResume] = useState(true);
+  const [isFetchingSkill, setIsFetchingSkill] = useState(true);
+  const [isFetchingCourse, setIsFetchingCourse] = useState(true);
   const [educations, setEducations] = useState([]);
   const [workExperience, setWorkExperience] = useState([]);
   const [projects, setProjects] = useState([]);
   const [skills, setSkills] = useState([]);
+  const [courses, setCourses] = useState([]);
   const [ref, inView] = useInView({
     threshold: 0,
   });
   const [btnValue, setBtnValue] = useState("All");
+  useScript("https://cdn.credly.com/assets/utilities/embed.js");
 
   useEffect(() => {
+    // resume
     fetch("https://yen-website-api.herokuapp.com/api/resume/")
       .then((response) => response.json())
       .then((data) => {
-        setIsFetching(false);
+        setIsFetchingResume(false);
         setEducations(data.educations);
         setWorkExperience(data.workExperience);
         setProjects(data.projects);
       });
+    // course
+    fetch("https://yen-website-api.herokuapp.com/api/course/")
+      .then((response) => response.json())
+      .then((data) => {
+        setIsFetchingCourse(false);
+        setCourses(data.courses);
+      });
   }, []);
 
   useEffect(() => {
-    setIsFetching1(true);
+    setIsFetchingSkill(true);
     fetch("https://yen-website-api.herokuapp.com/api/skill/", {
       method: "POST",
       headers: {
@@ -54,11 +70,11 @@ function ResumeContent() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setIsFetching1(false);
+        setIsFetchingSkill(false);
         setSkills(data.skills);
       })
       .catch(() => {
-        setIsFetching1(false);
+        setIsFetchingSkill(false);
         setSkills(null);
       });
   }, [btnValue]);
@@ -74,7 +90,7 @@ function ResumeContent() {
           <span className='sub-title py-2'>Education</span>
           <FaGraduationCap className='mx-2' />
         </h3>
-        {isFetching ? (
+        {isFetchingResume ? (
           <LoadingSpinner>Loading</LoadingSpinner>
         ) : (
           educations.map((item, key) => {
@@ -86,7 +102,7 @@ function ResumeContent() {
           <span className='sub-title py-2'>Work Experience</span>
           <FaBlackTie className='mx-2' />
         </h3>
-        {isFetching ? (
+        {isFetchingResume ? (
           <LoadingSpinner>Loading</LoadingSpinner>
         ) : (
           workExperience.map((item, key) => {
@@ -106,7 +122,7 @@ function ResumeContent() {
             section
           </span>
         </div>
-        {isFetching ? (
+        {isFetchingResume ? (
           <LoadingSpinner>Loading</LoadingSpinner>
         ) : (
           projects.map((item, key) => {
@@ -114,13 +130,14 @@ function ResumeContent() {
           })
         )}
       </div>
+
       <SkillButton
         types={types}
         btnValue={btnValue}
         setBtnValue={setBtnValue}
-        loading={isFetching1}
+        loading={isFetchingSkill}
       />
-      {isFetching1 ? (
+      {isFetchingSkill ? (
         <LoadingSpinner>Loading</LoadingSpinner>
       ) : skills !== null ? (
         <div ref={ref}>
@@ -142,7 +159,27 @@ function ResumeContent() {
           Error
         </Alert>
       )}
-      <Course data={CourseData} />
+      <h3 className='my-3'>
+        <span className='sub-title py-2'>Certificate</span>
+        <FaCertificate className='mx-2' />
+      </h3>
+      <div
+        data-iframe-width='270'
+        data-iframe-height='270'
+        data-share-badge-id='948aa351-269b-46d7-a63e-66c3e33f3ee9'
+        data-share-badge-host='https://www.credly.com'
+      />
+      <h3 className='my-3'>
+        Taken Courses
+        <FaBookReader className='mx-2' />
+      </h3>
+      {isFetchingCourse ? (
+        <LoadingSpinner>Loading</LoadingSpinner>
+      ) : (
+        courses.map((item, key) => {
+          return <Course key={key} data={item} />;
+        })
+      )}
     </Card>
   );
 }

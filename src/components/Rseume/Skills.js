@@ -37,7 +37,7 @@ function Skills({ done, children, inView, type }) {
       };
       setStyle(newStyle);
     }
-  }, [inView, done]);
+  }, [inView, done, backgroundColor]);
 
   return (
     <InView className='my-3'>

@@ -32,3 +32,9 @@ body {
   text-align: end;
   color: #eee;
 }
+
+/* Course */
+
+a:hover {
+  color: olive !important;
+}
