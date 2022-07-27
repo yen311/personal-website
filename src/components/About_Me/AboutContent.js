@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import DotItem from '../Common/dotItem';
-import './AboutContent.css';
-import Card from '../UI/Card';
-import { Link } from 'react-router-dom';
-import Country from './Country.png';
-import ImageZoom from 'react-medium-image-zoom';
+import React, { useState, useEffect } from "react";
+import DotItem from "../Common/dotItem";
+import Card from "../UI/Card";
+import { Link } from "react-router-dom";
 
 function AboutContent() {
   const Age = () => {
@@ -12,7 +9,7 @@ function AboutContent() {
 
     const currentAge = () => {
       const secOfYear = 60 * 60 * 24 * 365;
-      const birthday = new Date('March 11, 1997 10:29:00');
+      const birthday = new Date("March 11, 1997 10:29:00");
       setAge(((Date.now() - birthday) / 1000 / secOfYear).toFixed(8));
     };
     useEffect(() => {
@@ -31,27 +28,32 @@ function AboutContent() {
         <p className='card-top-p'>Fun facts</p>
       </div>
       <div className='card-bottom'>
-        <h3 className='h3-title'>INTRO</h3>
+        <h3 className='mb-3'>
+          <span className='sub-title py-2'>Intro</span>
+        </h3>
         <p className='card-bottom-p'>
-          I am the second-year master student in computer science currently. My
-          coding journey start from 2019. In the past two years study. I have
-          learned multiple programming languages, and developed in couple
-          projects to bulid some interesting works. Take a look at those fun
-          stuffs at{' '}
+          I am the junior software developer at jtwo, a cloud consulting
+          company. Currently living in Adelaide, Australia. My coding journey
+          start from 2019. I study for two years in Australian National
+          University from 2020 and start to becoming a software developer since
+          2022. I have learned and explore multiple programming languages,
+          currently mainly focus on Javascript (React), Python (Django) and
+          those major public cloud platform (Azure && AWS != GCP). I have also
+          worked on couple interesting projects. Take a look at those fun stuffs
+          at{" "}
           <Link className='link' to='/portfolio'>
             portfolio
-          </Link>{' '}
-          section. I majored finance for my bechlor degree. Changing the study
-          discipline might be one of the most important decision which I made in
-          my life. Nevertheless, it's also the best decision which I have ever
-          made as well. The reason why I love coding so much is that it can make
-          my ideas and designs into reality. Building a easy-to-use and useful
-          applications will always being my goal. I believe that it can bring
-          lot of happiness both for me and the users. Those happiness makes my
-          life better, also push me foward to make our life better!
+          </Link>{" "}
+          section. <br></br>I'm a finance guy before I start to code. Changing
+          the discipline might be one of the most important decision which I
+          made in my life. Nevertheless, it's also the best decision which I
+          have ever made as well. Explore more around this website and get know
+          more about me. Feel free to reach me out if you would like to make
+          friend with me :)))
         </p>
-        <h3 className='h3-title'>Interest</h3>
-
+        <h3 className='mb-3'>
+          <span className='sub-title py-2'>Interest</span>
+        </h3>
         <ul>
           <DotItem>Fishing</DotItem>
           <DotItem>Golf</DotItem>
@@ -62,8 +64,9 @@ function AboutContent() {
           <DotItem>Baking</DotItem>
           <DotItem>Coffee</DotItem>
         </ul>
-
-        <h3 className='h3-title'>FUN STATS</h3>
+        <h3 className='mb-3'>
+          <span className='sub-title py-2'>Fun Stats</span>
+        </h3>
         <ul>
           <DotItem>Age: {Age()}</DotItem>
           <DotItem>Born: Taoyuan, TW</DotItem>
@@ -75,18 +78,6 @@ function AboutContent() {
           <DotItem>My car: VW GOLF</DotItem>
           <DotItem>Country visited: 13</DotItem>
         </ul>
-        <ImageZoom
-          image={{
-            src: Country,
-            alt: '404',
-            className: 'img',
-            style: { width: '20%' },
-          }}
-          zoomImage={{
-            src: 'Country',
-            alt: '404',
-          }}
-        />
       </div>
     </Card>
   );
