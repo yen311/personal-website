@@ -11308,7 +11308,7 @@ const markers = [
 ];
 
 const SVG_WorldMap = (props) => {
-  const [current, setCurrent] = useState("Hover to one of the marker");
+  const [current, setCurrent] = useState("Hover to one of the markers");
   return (
     <div>
       <h3 className='text-center'>{current}</h3>
