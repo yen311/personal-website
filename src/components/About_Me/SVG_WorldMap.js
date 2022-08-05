@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
-import { VectorMap } from "react-jvectormap";
 import WorldMap from "react-svg-worldmap";
 
 const mapData = [
@@ -36,25 +35,36 @@ const mapData = [
   { latLng: [41.881832, -87.623177], name: "Chicago" },
 ];
 
-const selectedRegion = ["AU", "TW", "CN", "US", "JP", "KR", "MY", "GB", "ID", "FR", "NL", "TH"];
-
 const SVG_WorldMap = (props) => {
   const data = [
-    { country: "cn", value: 1389618778 }, // china
-    { country: "in", value: 1311559204 }, // india
-    { country: "us", value: 331883986 }, // united states
-    { country: "id", value: 264935824 }, // indonesia
-    { country: "pk", value: 210797836 }, // pakistan
-    { country: "br", value: 210301591 }, // brazil
-    { country: "ng", value: 208679114 }, // nigeria
-    { country: "bd", value: 161062905 }, // bangladesh
-    { country: "ru", value: 141944641 }, // russia
-    { country: "mx", value: 127318112 }, // mexico
+    { country: "au", value: 1 },
+    { country: "tw", value: 1 },
+    { country: "cn", value: 1 },
+    { country: "us", value: 1 },
+    { country: "jp", value: 1 },
+    { country: "kr", value: 1 },
+    { country: "my", value: 1 },
+    { country: "gb", value: 1 },
+    { country: "id", value: 1 },
+    { country: "fr", value: 1 },
+    { country: "nl", value: 1 },
+    { country: "th", value: 1 },
+    { country: "sg", value: 1 },
   ];
 
+  const getLocalizedText = ({ countryCode, countryValue }) => {
+    return countryCode;
+  };
+
   return (
-    <div className='App'>
-      <WorldMap color='red' title='Top 10 Populous Countries' value-suffix='people' size='lg' data={data} />
+    <div className='text-center'>
+      <WorldMap
+        color='#e6be2e'
+        title='My World Map'
+        size='responsive'
+        data={data}
+        tooltipTextFunction={getLocalizedText}
+      />
     </div>
   );
 };

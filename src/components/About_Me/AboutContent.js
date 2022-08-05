@@ -8,7 +8,6 @@ function AboutContent() {
   const [countryNum, setCountryNum] = useState(0);
   const [cityNum, setCityNum] = useState(0);
   const numHnadler = (num) => {
-    console.log(num);
     setCountryNum(num.country + 1);
     setCityNum(num.city);
   };
