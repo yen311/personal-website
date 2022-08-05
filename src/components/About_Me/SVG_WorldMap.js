@@ -42,7 +42,7 @@ const SVG_WorldMap = (props) => {
     props.callback({ country: selectedRegion.length, city: mapData.length });
   }, []);
 
-  const [current, setCurrent] = useState("Try to hover on the marker");
+  //const [current, setCurrent] = useState("Try to hover on the marker");
   const refMap = useRef(null);
   useEffect(() => {
     return () => {
@@ -53,7 +53,7 @@ const SVG_WorldMap = (props) => {
   }, [refMap]);
   return (
     <div>
-      <h3 className='mx-auto w-100 text-center'>{current}</h3>
+      {/* <h3 className='mx-auto w-100 text-center'>{current}</h3> */}
       <VectorMap
         map={"world_mill"}
         backgroundColor='transparent'
@@ -97,10 +97,10 @@ const SVG_WorldMap = (props) => {
             fill: "blue",
           },
         }}
-        markers={mapData}
+        // markers={mapData}
         onMarkerTipShow={(e, label, code) => {
           e.preventDefault();
-          setCurrent(label[0].innerText);
+          // setCurrent(label[0].innerText);
         }}
       />
     </div>
