@@ -13,7 +13,8 @@
     "react-jvectormap": "^0.0.16",
     "react-loader-spinner": "^5.1.5",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3"
+    "react-scripts": "4.0.3",
+    "react-svg-worldmap": "^2.0.0-alpha.1"
   },
   "scripts": {
     "predeploy": "npm run build",

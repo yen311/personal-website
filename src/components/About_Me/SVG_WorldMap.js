@@ -1,6 +1,7 @@
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import { VectorMap } from "react-jvectormap";
+import WorldMap from "react-svg-worldmap";
 
 const mapData = [
   { latLng: [25.105497, 121.597366], name: "Taipei City", style: { fill: "red" } },
@@ -38,71 +39,22 @@ const mapData = [
 const selectedRegion = ["AU", "TW", "CN", "US", "JP", "KR", "MY", "GB", "ID", "FR", "NL", "TH"];
 
 const SVG_WorldMap = (props) => {
-  useEffect(() => {
-    props.callback({ country: selectedRegion.length, city: mapData.length });
-  }, []);
+  const data = [
+    { country: "cn", value: 1389618778 }, // china
+    { country: "in", value: 1311559204 }, // india
+    { country: "us", value: 331883986 }, // united states
+    { country: "id", value: 264935824 }, // indonesia
+    { country: "pk", value: 210797836 }, // pakistan
+    { country: "br", value: 210301591 }, // brazil
+    { country: "ng", value: 208679114 }, // nigeria
+    { country: "bd", value: 161062905 }, // bangladesh
+    { country: "ru", value: 141944641 }, // russia
+    { country: "mx", value: 127318112 }, // mexico
+  ];
 
-  //const [current, setCurrent] = useState("Try to hover on the marker");
-  const refMap = useRef(null);
-  useEffect(() => {
-    return () => {
-      if (refMap.current) {
-        refMap.current.tip.remove();
-      }
-    };
-  }, [refMap]);
   return (
-    <div>
-      {/* <h3 className='mx-auto w-100 text-center'>{current}</h3> */}
-      <VectorMap
-        map={"world_mill"}
-        backgroundColor='transparent'
-        containerStyle={{
-          width: "100%",
-          height: "50vh",
-        }}
-        containerClassName='map'
-        zoomButtons={false}
-        zoomOnScroll={false}
-        onRegionTipShow={(e) => {
-          e.preventDefault();
-        }}
-        ref={(map) => {
-          if (refMap.current) {
-            refMap.current.tip.remove();
-          }
-          if (map) {
-            refMap.current = map.$mapObject;
-          }
-        }}
-        regionStyle={{
-          initial: {
-            fill: "#cccccc",
-            "fill-opacity": 1,
-            stroke: "none",
-            "stroke-width": 0,
-            "stroke-opacity": 0,
-          },
-          hover: {},
-          selected: {
-            fill: "#fcba03",
-          },
-        }}
-        selectedRegions={selectedRegion}
-        markerStyle={{
-          initial: {
-            fill: "olive",
-          },
-          hover: {
-            fill: "blue",
-          },
-        }}
-        // markers={mapData}
-        onMarkerTipShow={(e, label, code) => {
-          e.preventDefault();
-          // setCurrent(label[0].innerText);
-        }}
-      />
+    <div className='App'>
+      <WorldMap color='red' title='Top 10 Populous Countries' value-suffix='people' size='lg' data={data} />
     </div>
   );
 };

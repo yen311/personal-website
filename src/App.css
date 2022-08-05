@@ -40,3 +40,8 @@ body {
 a:hover {
   color: olive !important;
 }
+.tab-content > .tab-pane:not(.active) {
+  display: block;
+  height: 0;
+  overflow-y: hidden;
+}
