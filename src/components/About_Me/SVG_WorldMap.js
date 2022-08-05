@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import WorldMap from "react-svg-worldmap";
 
 const mapData = [
@@ -51,6 +51,10 @@ const SVG_WorldMap = (props) => {
     { country: "th", value: 1 },
     { country: "sg", value: 1 },
   ];
+
+  useEffect(() => {
+    props.callback(data.length);
+  }, []);
 
   const getLocalizedText = ({ countryCode, countryValue }) => {
     return countryCode;

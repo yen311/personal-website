@@ -6,10 +6,8 @@ import SVG_WorldMap from "./SVG_WorldMap";
 
 function AboutContent() {
   const [countryNum, setCountryNum] = useState(0);
-  const [cityNum, setCityNum] = useState(0);
   const numHnadler = (num) => {
-    setCountryNum(num.country + 1);
-    setCityNum(num.city);
+    setCountryNum(num);
   };
   useEffect(() => {}, []);
 
@@ -57,12 +55,18 @@ function AboutContent() {
           <span className='sub-title py-2'>Intro</span>
         </h3>
         <p className='card-bottom-p'>
-          I am the junior software developer at jtwo, a cloud consulting company. Currently living in Adelaide, Australia. My coding journey start from 2019. I study for two years in Australian National University from 2020 and start to becoming a software developer since 2022. I have learned and explored multiple programming languages, current mainly focus on Javascript (React), Python (Django) and those major public cloud platform (Azure && AWS != GCP). I have also worked on couple interesting
-          projects. Take a look at those fun stuffs at{" "}
+          I am the junior software developer at jtwo, a cloud consulting company. Currently living in Adelaide,
+          Australia. My coding journey start from 2019. I study for two years in Australian National University from
+          2020 and start to becoming a software developer since 2022. I have learned and explored multiple programming
+          languages, current mainly focus on Javascript (React), Python (Django) and those major public cloud platform
+          (Azure && AWS != GCP). I have also worked on couple interesting projects. Take a look at those fun stuffs at{" "}
           <Link className='link' to='/portfolio'>
             portfolio
           </Link>{" "}
-          section. <br></br>I'm a finance guy before I start to code. Changing the discipline might be one of the most important decision which I made in my life. Nevertheless, it's also the best decision which I have ever made as well. Explore more around this website and get know more about me. Feel free to reach me out if you would like to make friend with me :)))
+          section. <br></br>I'm a finance guy before I start to code. Changing the discipline might be one of the most
+          important decision which I made in my life. Nevertheless, it's also the best decision which I have ever made
+          as well. Explore more around this website and get know more about me. Feel free to reach me out if you would
+          like to make friend with me :)))
         </p>
         <h3 className='mb-3'>
           <span className='sub-title py-2'>Interest</span>
@@ -87,7 +91,6 @@ function AboutContent() {
           <DotItem>Coffee safe my live, I can't work well without it :)) (Prefer to drink it with milk)</DotItem>
           <DotItem>Kind of Alcoholic (Beer && Whiskey lover)</DotItem>
           <DotItem>Country visited: {countryNum}</DotItem>
-          <DotItem>City visited: {cityNum}</DotItem>
         </ul>
         <SVG_WorldMap callback={numHnadler} />
       </div>
