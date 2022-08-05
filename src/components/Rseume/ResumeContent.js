@@ -5,13 +5,7 @@ import ExperienceItem from "./ExperienceItem";
 import Skills from "./Skills";
 import SkillButton from "./SkillButton";
 import Course from "./Course";
-import {
-  FaGraduationCap,
-  FaBlackTie,
-  FaCode,
-  FaCertificate,
-  FaBookReader,
-} from "react-icons/fa";
+import { FaGraduationCap, FaBlackTie, FaCode, FaCertificate, FaBookReader } from "react-icons/fa";
 import LoadingSpinner from "../Common/LoadingSpinner";
 import { useInView } from "react-intersection-observer";
 import Alert from "react-bootstrap/Alert";
@@ -57,7 +51,7 @@ function ResumeContent() {
         setIsFetchingCourse(false);
         setCourses(data.courses);
       });
-  }, []);
+  }, [setIsFetchingResume, setEducations, setWorkExperience, setProjects, setIsFetchingCourse, setCourses]);
 
   useEffect(() => {
     setIsFetchingSkill(true);
@@ -77,7 +71,7 @@ function ResumeContent() {
         setIsFetchingSkill(false);
         setSkills(null);
       });
-  }, [btnValue]);
+  }, [btnValue, setIsFetchingSkill, setSkills]);
 
   return (
     <Card className='card-center'>
@@ -131,24 +125,14 @@ function ResumeContent() {
         )}
       </div>
 
-      <SkillButton
-        types={types}
-        btnValue={btnValue}
-        setBtnValue={setBtnValue}
-        loading={isFetchingSkill}
-      />
+      <SkillButton types={types} btnValue={btnValue} setBtnValue={setBtnValue} loading={isFetchingSkill} />
       {isFetchingSkill ? (
         <LoadingSpinner>Loading</LoadingSpinner>
       ) : skills !== null ? (
         <div ref={ref}>
           {skills.map((item, key) => {
             return (
-              <Skills
-                done={item.percentage}
-                inView={inView}
-                key={key}
-                type={item.type}
-              >
+              <Skills done={item.percentage} inView={inView} key={key} type={item.type}>
                 {item.name}
               </Skills>
             );
@@ -163,12 +147,7 @@ function ResumeContent() {
         <span className='sub-title py-2'>Certificate</span>
         <FaCertificate className='mx-2' />
       </h3>
-      <div
-        data-iframe-width='270'
-        data-iframe-height='270'
-        data-share-badge-id='948aa351-269b-46d7-a63e-66c3e33f3ee9'
-        data-share-badge-host='https://www.credly.com'
-      />
+      <div data-iframe-width='270' data-iframe-height='270' data-share-badge-id='948aa351-269b-46d7-a63e-66c3e33f3ee9' data-share-badge-host='https://www.credly.com' />
       <h3 className='my-3'>
         Taken Courses
         <FaBookReader className='mx-2' />
