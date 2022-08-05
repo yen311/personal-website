@@ -5,7 +5,7 @@ import DropdownItem from "./DropdownItem";
 import "./Navbar.css";
 import { FaAlignJustify, FaTimes } from "react-icons/fa";
 
-function Navbar() {
+function Navbar({ projects }) {
   const [navOpen, setNavOpen] = useState(false);
   const [dropdown, setDropdown] = useState(false);
 
@@ -36,20 +36,11 @@ function Navbar() {
           <ul className={navOpen ? "nav-menu open" : "nav-menu"}>
             <NavItem close={closeHamburger}>About Me</NavItem>
             <NavItem close={closeHamburger}>Resume</NavItem>
-            <li
-              className='nav-item'
-              onMouseEnter={mouseEnter}
-              onMouseLeave={mouseLeave}
-            >
-              <NavLink
-                activeClassName='active'
-                className='nav-links'
-                onClick={closeHamburger}
-                to='/portfolio'
-              >
+            <li className='nav-item' onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
+              <NavLink activeClassName='active' className='nav-links' onClick={closeHamburger} to='/portfolio'>
                 Portfolio
               </NavLink>
-              {dropdown && <DropdownItem />}
+              {dropdown && <DropdownItem projects={projects} />}
             </li>
             <NavItem close={closeHamburger}>Contact</NavItem>
           </ul>

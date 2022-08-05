@@ -1,19 +1,19 @@
 import React from "react";
-import PortfolioContent from "../components/Portfolio/PortfolioContent";
+import ProjectContent from "../components/Project/ProjectContent";
 import Image from "../components/Common/Image";
 import About from "../components/Common/About";
 import Footer from "../components/Common/Footer";
 import { motion } from "framer-motion";
 
-function Protfolio({ projects }) {
+const PorjectPage = ({ data }) => {
   return (
     <motion.div initial={{ opacity: 0 }} exit={{ opacity: 0 }} animate={{ opacity: 1 }}>
-      <PortfolioContent projects={projects} />
+      <ProjectContent data={data} />
       <Image />
       <About pages='portfolio' />
       <Footer />
     </motion.div>
   );
-}
+};
 
-export default Protfolio;
+export default PorjectPage;

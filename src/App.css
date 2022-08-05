@@ -45,3 +45,12 @@ a:hover {
   width: 100%;
   height: 60vh;
 }
+
+.btn-outline-success {
+  color: olive;
+  border: 1px solid olive;
+}
+.btn-outline-success:hover {
+  background-color: olive;
+  border: 1px solid olive;
+}

@@ -10,6 +10,7 @@ import LoadingSpinner from "../Common/LoadingSpinner";
 import { useInView } from "react-intersection-observer";
 import Alert from "react-bootstrap/Alert";
 import useScript from "../Hooks/useScript";
+import { BaseURL } from "../../utils/config";
 
 const types = [
   { name: "All", value: "All" },
@@ -32,11 +33,11 @@ function ResumeContent() {
     threshold: 0,
   });
   const [btnValue, setBtnValue] = useState("All");
-  useScript("https://cdn.credly.com/assets/utilities/embed.js");
+  useScript(`https://cdn.credly.com/assets/utilities/embed.js`);
 
   useEffect(() => {
     // resume
-    fetch("https://yen-website-api.herokuapp.com/api/resume/")
+    fetch(`${BaseURL}/api/resume/`)
       .then((response) => response.json())
       .then((data) => {
         setIsFetchingResume(false);
@@ -45,7 +46,7 @@ function ResumeContent() {
         setProjects(data.projects);
       });
     // course
-    fetch("https://yen-website-api.herokuapp.com/api/course/")
+    fetch(`${BaseURL}/api/course/`)
       .then((response) => response.json())
       .then((data) => {
         setIsFetchingCourse(false);
@@ -55,7 +56,7 @@ function ResumeContent() {
 
   useEffect(() => {
     setIsFetchingSkill(true);
-    fetch("https://yen-website-api.herokuapp.com/api/skill/", {
+    fetch(`${BaseURL}/api/skill/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -147,7 +148,12 @@ function ResumeContent() {
         <span className='sub-title py-2'>Certificate</span>
         <FaCertificate className='mx-2' />
       </h3>
-      <div data-iframe-width='270' data-iframe-height='270' data-share-badge-id='948aa351-269b-46d7-a63e-66c3e33f3ee9' data-share-badge-host='https://www.credly.com' />
+      <div
+        data-iframe-width='270'
+        data-iframe-height='270'
+        data-share-badge-id='948aa351-269b-46d7-a63e-66c3e33f3ee9'
+        data-share-badge-host='https://www.credly.com'
+      />
       <h3 className='my-3'>
         Taken Courses
         <FaBookReader className='mx-2' />

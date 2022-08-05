@@ -1,25 +1,18 @@
 import React from "react";
 import ProjectCard from "./ProjectCard";
 import Card from "../UI/Card";
-import PortfolioData from "../../data/PortfolioData";
-import peronalImg from "./yenWebsite.jpg";
-import ourCultureImg from "./graduateHouse.jpg";
-import wtfoodImg from "./wtfood.png";
-import metroImg from "./metro.jpg";
 
-function PortfolioContent() {
+function PortfolioContent({ projects }) {
   return (
-    <Card className="card-center">
-      <div className="card-top">
-        <h1 className="card-title">Project Portfolio</h1>
-        <br />
-        <p className="card-top-p">The project which I have built</p>
+    <Card className='card-center'>
+      <div className='card-top'>
+        <h1>Project Portfolio</h1>
+        <p className='card-top-p'>The project which I have built.</p>
       </div>
-      <div className="card-bottom">
-        <ProjectCard data={PortfolioData.personalWebsite} img={peronalImg} />
-        <ProjectCard data={PortfolioData.ourCulture} img={ourCultureImg} />
-        <ProjectCard data={PortfolioData.WTFood} img={wtfoodImg} />
-        <ProjectCard data={PortfolioData.Metro} img={metroImg} />
+      <div className='card-bottom'>
+        {projects.map((item, key) => {
+          if (item.type === "Personal") return <ProjectCard data={item} key={key} />;
+        })}
       </div>
     </Card>
   );
