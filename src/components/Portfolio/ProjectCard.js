@@ -9,13 +9,25 @@ function ProjectCard({ data }) {
     history.push(`/portfolio${loc}`);
   };
   return (
-    <Card style={{ width: "18rem" }}>
+    <Card style={{ width: "18rem" }} className='me-4 mb-3'>
       <Card.Img variant='top' src={BaseURL + data.img} />
       <Card.Body>
         <Card.Title>{data.dropdownName}</Card.Title>
-        {data.descriptions.map((item, index) => {
+        <Card.Subtitle className='mb-2 text-muted'>{data.date}</Card.Subtitle>
+        {/* {data.descriptions.map((item, index) => {
           return <Card.Text key={index}>{item}</Card.Text>;
-        })}
+        })} */}
+        {data.url ? (
+          <a className='text-muted' href={data.url} target='_blank'>
+            Have a play with it
+          </a>
+        ) : (
+          <a className='disable text-muted' disabled='disabled'>
+            Not Available
+          </a>
+        )}
+      </Card.Body>
+      <Card.Footer>
         <div className='d-flex justify-content-between align-items-baseline'>
           <a className='text-muted' href={data.githubUrl} target='_blank'>
             Go to source code
@@ -24,7 +36,7 @@ function ProjectCard({ data }) {
             More Detail
           </button>
         </div>
-      </Card.Body>
+      </Card.Footer>
     </Card>
   );
 }

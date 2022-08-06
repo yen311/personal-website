@@ -10,9 +10,11 @@ function PortfolioContent({ projects }) {
         <p className='card-top-p'>The project which I have built.</p>
       </div>
       <div className='card-bottom'>
-        {projects.map((item, key) => {
-          if (item.type === "Personal") return <ProjectCard data={item} key={key} />;
-        })}
+        <div className='d-flex flex-wrap'>
+          {projects.map((item, key) => {
+            if (item.type === "Personal") return <ProjectCard data={item} key={key} />;
+          })}
+        </div>
       </div>
     </Card>
   );
