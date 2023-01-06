@@ -58,8 +58,9 @@ function AboutContent() {
           I am the junior software developer at jtwo, a cloud consulting company. Currently living in Adelaide,
           Australia. My coding journey start from 2019. I study for two years in Australian National University from
           2020 and start to becoming a software developer since 2022. I have learned and explored multiple programming
-          languages, current mainly focus on Javascript (React), Python (Django) and those major public cloud platform
-          (Azure && AWS != GCP). I have also worked on couple interesting projects. Take a look at those fun stuffs at{" "}
+          languages, current mainly focus on Javascript (React), Python (Django), Flutter (Dart), and those major public
+          cloud platform (Azure && AWS && GCP). I have also worked on couple interesting projects. Take a look at those
+          fun stuffs at{" "}
           <Link className='link' to='/portfolio'>
             portfolio
           </Link>{" "}
@@ -87,7 +88,7 @@ function AboutContent() {
           <DotItem>I speak English && Mandarin</DotItem>
           <DotItem>Currently live in Adelaide, SA</DotItem>
           <DotItem>My favorite city is Portland, Oregon</DotItem>
-          <DotItem>I really love cats. Especially little grey. </DotItem>
+          <DotItem>I'm a cat lover. Currently having a British Shorthair. (She's really cute) </DotItem>
           <DotItem>Coffee safe my live, I can't work well without it :)) (Prefer to drink it with milk)</DotItem>
           <DotItem>Kind of Alcoholic (Beer && Whiskey lover)</DotItem>
           <DotItem>Country visited: {countryNum}</DotItem>
