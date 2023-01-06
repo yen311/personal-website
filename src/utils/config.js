@@ -1,1 +1,1 @@
-export const BaseURL = "https://yen-website-api.herokuapp.com";
+export const BaseURL = "https://yenpersonalwebsite.azurewebsites.net";
